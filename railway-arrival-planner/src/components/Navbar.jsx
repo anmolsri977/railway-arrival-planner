@@ -1,25 +1,23 @@
 function Navbar({ setPage }) {
   return (
-    <nav style={styles.nav}>
-      <h3>🚆 Railway Arrival Planner</h3>
+    <header className="navbar">
+      <div className="nav-inner">
+        <div className="brand" onClick={() => setPage("coach")}>
+          <div className="brand-logo">🚆</div>
+          <div className="brand-text">
+            <h1>Railway Arrival Planner</h1>
+            <small>Quick arrival & exit guidance</small>
+          </div>
+        </div>
 
-      <div>
-        <button onClick={() => setPage("coach")}>Coach Guide</button>
-        <button onClick={() => setPage("delay")}>Delay Planner</button>
-        <button onClick={() => setPage("exit")}>Exit Finder</button>
+        <nav className="nav-actions">
+          <button className="nav-btn" onClick={() => setPage("coach")}>Coach Guide</button>
+          <button className="nav-btn" onClick={() => setPage("delay")}>Delay Planner</button>
+          <button className="nav-btn" onClick={() => setPage("exit")}>Exit Finder</button>
+        </nav>
       </div>
-    </nav>
+    </header>
   );
 }
-
-const styles = {
-  nav: {
-    display: "flex",
-    justifyContent: "space-between",
-    padding: "15px",
-    background: "#1e293b",
-    color: "white"
-  }
-};
 
 export default Navbar;
