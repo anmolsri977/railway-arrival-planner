@@ -1,0 +1,25 @@
+# Normalize line endings and enforce LF for text files
+# Treat files detected as text as text and normalize to LF in repo
+* text=auto
+
+# Explicitly enforce LF for common web files
+*.js     text eol=lf
+*.jsx    text eol=lf
+*.ts     text eol=lf
+*.tsx    text eol=lf
+*.css    text eol=lf
+*.scss   text eol=lf
+*.html   text eol=lf
+*.json   text eol=lf
+*.md     text eol=lf
+*.yml    text eol=lf
+*.yaml   text eol=lf
+
+# Leave binary files alone
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.ico    binary
+*.zip    binary
+*.gz     binary
