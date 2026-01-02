@@ -1,8 +1,17 @@
+import React, { useState } from "react";
+
 function Navbar({ setPage, page }) {
+  const [open, setOpen] = useState(false);
+
+  const handleSelect = (p) => {
+    setPage(p);
+    setOpen(false);
+  };
+
   return (
     <header className="navbar">
       <div className="nav-inner">
-        <div className="brand" onClick={() => setPage("coach")}>
+        <div className="brand" onClick={() => handleSelect("coach")}>
           <div className="brand-logo">🚆</div>
           <div className="brand-text">
             <h1>Railway Arrival Planner</h1>
@@ -10,10 +19,23 @@ function Navbar({ setPage, page }) {
           </div>
         </div>
 
-        <nav className="nav-actions" role="tablist" aria-label="Main">
+        <button
+          className="nav-toggle"
+          aria-expanded={open}
+          aria-label="Toggle navigation"
+          onClick={() => setOpen((s) => !s)}
+        >
+          ☰
+        </button>
+
+        <nav
+          className={"nav-actions " + (open ? "open" : "")}
+          role="tablist"
+          aria-label="Main"
+        >
           <button
             className={"nav-btn " + (page === "coach" ? "active" : "")}
-            onClick={() => setPage("coach")}
+            onClick={() => handleSelect("coach")}
             role="tab"
             aria-selected={page === "coach"}
           >
@@ -22,7 +44,7 @@ function Navbar({ setPage, page }) {
 
           <button
             className={"nav-btn " + (page === "delay" ? "active" : "")}
-            onClick={() => setPage("delay")}
+            onClick={() => handleSelect("delay")}
             role="tab"
             aria-selected={page === "delay"}
           >
@@ -31,7 +53,7 @@ function Navbar({ setPage, page }) {
 
           <button
             className={"nav-btn " + (page === "exit" ? "active" : "")}
-            onClick={() => setPage("exit")}
+            onClick={() => handleSelect("exit")}
             role="tab"
             aria-selected={page === "exit"}
           >
