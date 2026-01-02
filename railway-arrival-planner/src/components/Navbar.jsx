@@ -1,4 +1,4 @@
-function Navbar({ setPage }) {
+function Navbar({ setPage, page }) {
   return (
     <header className="navbar">
       <div className="nav-inner">
@@ -10,10 +10,33 @@ function Navbar({ setPage }) {
           </div>
         </div>
 
-        <nav className="nav-actions">
-          <button className="nav-btn" onClick={() => setPage("coach")}>Coach Guide</button>
-          <button className="nav-btn" onClick={() => setPage("delay")}>Delay Planner</button>
-          <button className="nav-btn" onClick={() => setPage("exit")}>Exit Finder</button>
+        <nav className="nav-actions" role="tablist" aria-label="Main">
+          <button
+            className={"nav-btn " + (page === "coach" ? "active" : "")}
+            onClick={() => setPage("coach")}
+            role="tab"
+            aria-selected={page === "coach"}
+          >
+            Coach Guide
+          </button>
+
+          <button
+            className={"nav-btn " + (page === "delay" ? "active" : "")}
+            onClick={() => setPage("delay")}
+            role="tab"
+            aria-selected={page === "delay"}
+          >
+            Delay Planner
+          </button>
+
+          <button
+            className={"nav-btn " + (page === "exit" ? "active" : "")}
+            onClick={() => setPage("exit")}
+            role="tab"
+            aria-selected={page === "exit"}
+          >
+            Exit Finder
+          </button>
         </nav>
       </div>
     </header>

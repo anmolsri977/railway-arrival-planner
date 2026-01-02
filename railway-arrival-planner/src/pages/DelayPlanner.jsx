@@ -14,18 +14,20 @@ function DelayPlanner() {
   }
 
   return (
-    <div style={styles.box}>
+    <div className="card">
       <h2>Delay Impact Planner</h2>
 
-      <label>Delayed Arrival Time</label>
-      <input type="time" onChange={(e) => setDelayed(e.target.value)} />
+      <label className="label">Delayed Arrival Time</label>
+      <input className="input" type="time" onChange={(e) => setDelayed(e.target.value)} />
 
-      <label>Connection Time</label>
-      <input type="time" onChange={(e) => setConnection(e.target.value)} />
+      <label className="label">Connection Time</label>
+      <input className="input" type="time" onChange={(e) => setConnection(e.target.value)} />
 
-      <button onClick={checkImpact}>Check</button>
+      <div style={{ marginTop: 12 }}>
+        <button className="btn primary" onClick={checkImpact}>Check</button>
+      </div>
 
-      {message && <p>{message}</p>}
+      {message && <div className="result">{message}</div>}
     </div>
   );
 }

@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <Navbar setPage={setPage} />
+      <Navbar setPage={setPage} page={page} />
 
       <Header />
 

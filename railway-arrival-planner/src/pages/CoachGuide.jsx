@@ -10,19 +10,22 @@ function CoachGuide() {
   }
 
   return (
-    <div style={styles.box}>
+    <div className="card">
       <h2>Coach & Platform Preparation</h2>
 
-      <select onChange={(e) => setCoach(e.target.value)}>
+      <label className="label">Select coach</label>
+      <select className="input" onChange={(e) => setCoach(e.target.value)}>
         <option value="">Select Coach</option>
         <option value="Sleeper">Sleeper</option>
         <option value="3AC">3AC</option>
         <option value="2AC">2AC</option>
       </select>
 
-      <button onClick={handleCheck}>Get Guidance</button>
+      <div style={{ marginTop: 12 }}>
+        <button className="btn primary" onClick={handleCheck}>Get Guidance</button>
+      </div>
 
-      {result && <p>{result}</p>}
+      {result && <div className="result">{result}</div>}
     </div>
   );
 }

@@ -9,6 +9,12 @@ function Header() {
           <p>Plan arrivals, check delay impacts, and find the best exit — fast.</p>
         </div>
       </div>
+      <div className="header-image">
+        <img
+          src="https://okcredit-blog-images-prod.storage.googleapis.com/2020/12/indianrailway1.jpg"
+          alt="Indian Railways"
+        />
+      </div>
     </section>
   );
 }

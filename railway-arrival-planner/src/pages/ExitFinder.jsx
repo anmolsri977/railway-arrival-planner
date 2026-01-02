@@ -6,13 +6,15 @@ function ExitFinder() {
   );
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="card">
       <h2>Smart Exit Finder</h2>
 
-      <p>Recommended Exit:</p>
-      <h3>{bestGate.name}</h3>
-      <p>Distance: {bestGate.distance} meters</p>
-      <p>Safe at night: {bestGate.safe ? "Yes" : "Caution"}</p>
+      <div className="result">
+        <p className="muted">Recommended Exit</p>
+        <h3 style={{ margin: '6px 0' }}>{bestGate.name}</h3>
+        <p>Distance: {bestGate.distance} meters</p>
+        <p>Safe at night: <strong style={{ color: bestGate.safe ? 'var(--success)' : 'var(--warning)'}}>{bestGate.safe ? 'Yes' : 'Caution'}</strong></p>
+      </div>
     </div>
   );
 }
