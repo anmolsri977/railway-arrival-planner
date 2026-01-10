@@ -6,7 +6,7 @@ function Header() {
       <div className="header-overlay">
         <div className="header-content">
           <h2>Welcome to Railway Arrival Planner</h2>
-          <p>Plan arrivals, check delay impacts, and find the best exit — fast.</p>
+          <p>Plan arrivals, check delay impacts, and find the best and nearest  exit — fast.</p>
         </div>
       </div>
       <div className="header-image">
